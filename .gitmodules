@@ -1,0 +1,123 @@
+[submodule "cbindgen"]
+	path = cbindgen
+	url = https://git.sailfishos.org/mirror/rust-cbindgen
+[submodule "vendor/ansi-term"]
+	path = vendor/ansi-term
+	url = https://git.sailfishos.org/mirror/rust-ansi-term
+[submodule "vendor/atty"]
+	path = vendor/atty
+	url = https://git.sailfishos.org/mirror/rust-atty
+[submodule "vendor/autocfg"]
+	path = vendor/autocfg
+	url = https://git.sailfishos.org/mirror/rust-autocfg
+[submodule "vendor/bitflags"]
+	path = vendor/bitflags
+	url = https://git.sailfishos.org/mirror/rust-bitflags
+[submodule "vendor/cfg-if"]
+	path = vendor/cfg-if
+	url = https://git.sailfishos.org/mirror/rust-cfg-if
+[submodule "vendor/clap"]
+	path = vendor/clap
+	url = https://git.sailfishos.org/mirror/rust-clap
+[submodule "vendor/cloudabi"]
+	path = vendor/cloudabi
+	url = https://git.sailfishos.org/mirror/rust-cloudabi
+[submodule "vendor/getrandom"]
+	path = vendor/getrandom
+	url = https://git.sailfishos.org/mirror/rust-getrandom
+[submodule "vendor/hashbrown"]
+	path = vendor/hashbrown
+	url = https://git.sailfishos.org/mirror/rust-hashbrown
+[submodule "vendor/heck"]
+	path = vendor/heck
+	url = https://git.sailfishos.org/mirror/rust-heck
+[submodule "vendor/hermit"]
+	path = vendor/hermit
+	url = https://git.sailfishos.org/mirror/rust-rusty-hermit
+[submodule "vendor/indexmap"]
+	path = vendor/indexmap
+	url = https://git.sailfishos.org/mirror/rust-indexmap
+[submodule "vendor/itoa"]
+	path = vendor/itoa
+	url = https://git.sailfishos.org/mirror/rust-itoa
+[submodule "vendor/lazy-static.rs"]
+	path = vendor/lazy-static.rs
+	url = https://git.sailfishos.org/mirror/rust-lazy-static.rs
+[submodule "vendor/libc"]
+	path = vendor/libc
+	url = https://git.sailfishos.org/mirror/rust-libc
+[submodule "vendor/parking_lot"]
+	path = vendor/parking_lot
+	url = https://git.sailfishos.org/mirror/rust-parking_lot
+[submodule "vendor/log"]
+	path = vendor/log
+	url = https://git.sailfishos.org/mirror/rust-log
+[submodule "vendor/cryptocorrosion"]
+	path = vendor/cryptocorrosion
+	url = https://git.sailfishos.org/mirror/rust-cryptocorrosion
+[submodule "vendor/proc-macro2"]
+	path = vendor/proc-macro2
+	url = https://git.sailfishos.org/mirror/rust-proc-macro2
+[submodule "vendor/quote"]
+	path = vendor/quote
+	url = https://git.sailfishos.org/mirror/rust-quote
+[submodule "vendor/rand"]
+	path = vendor/rand
+	url = https://git.sailfishos.org/mirror/rust-rand
+[submodule "vendor/redox_syscall"]
+	path = vendor/redox_syscall
+	url = https://git.sailfishos.org/mirror/rust-syscall
+[submodule "vendor/remove_dir_all"]
+	path = vendor/remove_dir_all
+	url = https://git.sailfishos.org/mirror/rust-remove_dir_all
+[submodule "vendor/ryu"]
+	path = vendor/ryu
+	url = https://git.sailfishos.org/mirror/rust-ryu
+[submodule "vendor/scopeguard"]
+	path = vendor/scopeguard
+	url = https://git.sailfishos.org/mirror/rust-scopeguard
+[submodule "vendor/serde"]
+	path = vendor/serde
+	url = https://git.sailfishos.org/mirror/rust-serde
+[submodule "vendor/serde_json"]
+	path = vendor/serde_json
+	url = https://git.sailfishos.org/mirror/rust-json
+[submodule "vendor/serial_test"]
+	path = vendor/serial_test
+	url = https://git.sailfishos.org/mirror/rust-serial_test
+[submodule "vendor/smallvec"]
+	path = vendor/smallvec
+	url = https://git.sailfishos.org/mirror/rust-smallvec
+[submodule "vendor/strsim"]
+	path = vendor/strsim
+	url = https://git.sailfishos.org/mirror/rust-strsim-rs
+[submodule "vendor/syn"]
+	path = vendor/syn
+	url = https://git.sailfishos.org/mirror/rust-syn
+[submodule "vendor/tempfile"]
+	path = vendor/tempfile
+	url = https://git.sailfishos.org/mirror/rust-tempfile
+[submodule "vendor/textwrap"]
+	path = vendor/textwrap
+	url = https://git.sailfishos.org/mirror/rust-textwrap
+[submodule "vendor/toml"]
+	path = vendor/toml
+	url = https://git.sailfishos.org/mirror/rust-toml-rs
+[submodule "vendor/unicode-segmentation"]
+	path = vendor/unicode-segmentation
+	url = https://git.sailfishos.org/mirror/rust-unicode-segmentation
+[submodule "vendor/unicode-width"]
+	path = vendor/unicode-width
+	url = https://git.sailfishos.org/mirror/rust-unicode-width
+[submodule "vendor/unicode-xid"]
+	path = vendor/unicode-xid
+	url = https://git.sailfishos.org/mirror/rust-unicode-xid
+[submodule "vendor/vec_map"]
+	path = vendor/vec_map
+	url = https://git.sailfishos.org/mirror/rust-vec-map
+[submodule "vendor/wasi"]
+	path = vendor/wasi
+	url = https://git.sailfishos.org/mirror/rust-wasi
+[submodule "vendor/winapi"]
+	path = vendor/winapi
+	url = https://git.sailfishos.org/mirror/rust-winapi-rs
