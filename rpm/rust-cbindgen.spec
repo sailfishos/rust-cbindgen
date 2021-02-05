@@ -1,7 +1,6 @@
-%global crate cbindgen
 %global rustflags -Clink-arg=-Wl,-z,relro,-z,now
 
-Name:           rust-%{crate}
+Name:           rust-cbindgen
 Version:        0.17.0
 Release:        0
 Summary:        A tool for generating C bindings from Rust code
@@ -15,14 +14,14 @@ BuildRequires:  rust-std-static >= 1.30.0
 %description
 A tool for generating C/C++ bindings from Rust code.
 
-%package     -n %{crate}
+%package     -n cbindgen
 Summary:        %{summary}
 License:        MPLv2.0 and MIT and BSD and (ASL 2.0 or Boost)
 
-%description -n %{crate}
+%description -n cbindgen
 A tool for generating C/C++ bindings from Rust code.
 
-%files       -n %{crate}
+%files       -n cbindgen
 %license LICENSE
 %doc contributing.md docs.md internals.md CHANGES README.md
 %{_bindir}/cbindgen
