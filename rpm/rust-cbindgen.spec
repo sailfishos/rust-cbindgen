@@ -62,7 +62,9 @@ sed -i 's/checksum = "[^"]*"/checksum = ""/' Cargo.lock
 export RUSTFLAGS="%{rustflags}"
 export CARGO_HOME=`pwd`/cargo-home/
 
-cargo build --offline --frozen --release
+# Forcing cargo builds to use a single core in order to make it build more
+# reliably. Let's revisit when we upgrade rust. JB#53588
+cargo build -j1 --offline --frozen --release
 
 %install
 # rustflags must be exported again at install as cargo build will
