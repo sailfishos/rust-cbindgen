@@ -59,6 +59,26 @@ find -L ../vendor -mindepth 2 -maxdepth 2 -type f -name Cargo.toml \
 sed -i 's/checksum = "[^"]*"/checksum = ""/' Cargo.lock
 
 %build
+# When cross-compiling under SB2 rust needs to know what arch to emit
+# when nothing is specified on the command line. That usually defaults
+# to "whatever rust was built as" but in SB2 rust is accelerated and
+# would produce x86 so this is how it knows differently. Not needed
+# for native x86 builds
+%ifarch %arm
+export SB2_RUST_TARGET_TRIPLE=armv7-unknown-linux-gnueabihf
+%endif
+%ifarch aarch64
+export SB2_RUST_TARGET_TRIPLE=aarch64-unknown-linux-gnu
+%endif
+# This avoids a malloc hang in sb2 gated calls to execvp/dup2/chdir
+# during fork/exec. It has no effect outside sb2 so doesn't hurt
+# native builds.
+%ifnarch %{ix86}
+export SB2_RUST_EXECVP_SHIM="/usr/bin/env LD_PRELOAD=/usr/lib/libsb2/libsb2.so.1 /usr/bin/env"
+export SB2_RUST_USE_REAL_EXECVP=Yes
+export SB2_RUST_USE_REAL_FN=Yes
+%endif
+
 export RUSTFLAGS="%{rustflags}"
 export CARGO_HOME=`pwd`/cargo-home/
 
@@ -67,6 +87,26 @@ export CARGO_HOME=`pwd`/cargo-home/
 cargo build -j1 --offline --frozen --release
 
 %install
+# When cross-compiling under SB2 rust needs to know what arch to emit
+# when nothing is specified on the command line. That usually defaults
+# to "whatever rust was built as" but in SB2 rust is accelerated and
+# would produce x86 so this is how it knows differently. Not needed
+# for native x86 builds
+%ifarch %arm
+export SB2_RUST_TARGET_TRIPLE=armv7-unknown-linux-gnueabihf
+%endif
+%ifarch aarch64
+export SB2_RUST_TARGET_TRIPLE=aarch64-unknown-linux-gnu
+%endif
+# This avoids a malloc hang in sb2 gated calls to execvp/dup2/chdir
+# during fork/exec. It has no effect outside sb2 so doesn't hurt
+# native builds.
+%ifnarch %{ix86}
+export SB2_RUST_EXECVP_SHIM="/usr/bin/env LD_PRELOAD=/usr/lib/libsb2/libsb2.so.1 /usr/bin/env"
+export SB2_RUST_USE_REAL_EXECVP=Yes
+export SB2_RUST_USE_REAL_FN=Yes
+%endif
+
 # rustflags must be exported again at install as cargo build will
 # rebuild the project if it detects flags have changed (to none or other)
 export RUSTFLAGS="%{rustflags}"
