@@ -84,7 +84,12 @@ export CARGO_HOME=`pwd`/cargo-home/
 
 # Forcing cargo builds to use a single core in order to make it build more
 # reliably. Let's revisit when we upgrade rust. JB#53588
+
+%ifarch %arm
+cargo build -j1 --offline --frozen --target armv7-unknown-linux-gnueabihf --release
+%else
 cargo build -j1 --offline --frozen --release
+%endif
 
 %install
 # When cross-compiling under SB2 rust needs to know what arch to emit
