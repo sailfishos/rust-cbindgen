@@ -84,7 +84,11 @@ export CARGO_HOME=`pwd`/cargo-home/
 
 # Forcing cargo builds to use a single core in order to make it build more
 # reliably. Let's revisit when we upgrade rust. JB#53588
+%ifarch %arm aarch64
+cargo build -j1 --offline --frozen --target $SB2_RUST_TARGET_TRIPLE --release
+%else
 cargo build -j1 --offline --frozen --release
+%endif
 
 %install
 # When cross-compiling under SB2 rust needs to know what arch to emit
@@ -114,7 +118,12 @@ export RUSTFLAGS="%{rustflags}"
 # will try to download source deps and rebuild
 export CARGO_HOME=`pwd`/cargo-home/
 # cargo install appends /bin to the path
+%ifarch %arm aarch64
+cargo install --root=%{buildroot}%{_prefix} --path . --target $SB2_RUST_TARGET_TRIPLE
+%else
 cargo install --root=%{buildroot}%{_prefix} --path .
+%endif
+
 # remove spurious files
 rm -f %{buildroot}%{_prefix}/.crates.toml
 rm -f %{buildroot}%{_prefix}/.crates2.json
