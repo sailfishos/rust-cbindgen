@@ -1,7 +1,7 @@
 %global rustflags -Clink-arg=-Wl,-z,relro,-z,now
 
 Name:           rust-cbindgen
-Version:        0.17.0
+Version:        0.19.0
 Release:        0
 Summary:        A tool for generating C bindings from Rust code
 License:        MPLv2.0
