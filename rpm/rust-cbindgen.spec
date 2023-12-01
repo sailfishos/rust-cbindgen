@@ -79,13 +79,14 @@ export SB2_RUST_USE_REAL_EXECVP=Yes
 export SB2_RUST_USE_REAL_FN=Yes
 %endif
 
+#export RUSTFLAGS="%{rustflags} -Ctarget-feature=-crt-static"
 export RUSTFLAGS="%{rustflags}"
 export CARGO_HOME=`pwd`/cargo-home/
 
 # Forcing cargo builds to use a single core in order to make it build more
 # reliably. Let's revisit when we upgrade rust. JB#53588
 %ifarch %arm aarch64
-cargo build -j1 --offline --frozen --target $SB2_RUST_TARGET_TRIPLE --release
+cargo build -j1 -vvvv --offline --frozen --target $SB2_RUST_TARGET_TRIPLE --release
 %else
 cargo build -j1 --offline --frozen --release
 %endif
@@ -113,6 +114,7 @@ export SB2_RUST_USE_REAL_FN=Yes
 
 # rustflags must be exported again at install as cargo build will
 # rebuild the project if it detects flags have changed (to none or other)
+#export RUSTFLAGS="%{rustflags} -Ctarget-feature=-crt-static"
 export RUSTFLAGS="%{rustflags}"
 # install stage also requires re-export of 'cargo-home' or cargo
 # will try to download source deps and rebuild
