@@ -6,10 +6,13 @@ Release:        0
 Summary:        A tool for generating C bindings from Rust code
 License:        MPLv2.0
 URL:            https://crates.io/crates/cbindgen
-Source:         %{name}-%{version}.tar.bz2
+Source0:        %{name}-%{version}.tar.bz2
+Source1:        vendor.tar.zst
+Source2:        cargo_config
 BuildRequires:  cargo >= 1.30.0
 BuildRequires:  rust >= 1.30.0
 BuildRequires:  rust-std-static >= 1.30.0
+#BuildRequires:  pkgconfig(libzstd)
 
 %description
 A tool for generating C/C++ bindings from Rust code.
@@ -27,36 +30,16 @@ A tool for generating C/C++ bindings from Rust code.
 %{_bindir}/cbindgen
 
 %prep
-%autosetup -p1 -n %{name}-%{version}/cbindgen
+%autosetup -a1 -p1 -n %{name}-%{version}/cbindgen
 
-# To prevent error `found a virtual manifest instead of a package manifest`
-rm ../vendor/cryptocorrosion/Cargo.toml
-rm ../vendor/hermit/Cargo.toml
-rm ../vendor/serde/Cargo.toml
-rm ../vendor/serial_test/Cargo.toml
+install -D -m 644 %{SOURCE2} .cargo/config
 
-# Make nested subprojects visible for cargo
-ln -s serde/serde ../vendor/serde-sl
-ln -s serde/serde_derive ../vendor/serde_derive-sl
-ln -s serial_test/serial_test ../vendor/serial_test-sl
-ln -s serial_test/serial_test_derive ../vendor/serial_test_derive-sl
-ln -s rand/rand_chacha ../vendor/rand_chacha-sl
-ln -s rand/rand_core ../vendor/rand_core-sl
-ln -s rand/rand_hc ../vendor/rand_hc-sl
-ln -s parking_lot/lock_api ../vendor/lock_api-sl
-ln -s parking_lot/core ../vendor/parking_lot_core-sl
-ln -s hermit/hermit-abi ../vendor/hermit-abi-sl
-ln -s winapi/i686 ../vendor/winapi-i686-pc-windows-gnu-sl
-ln -s winapi/x86_64 ../vendor/winapi-x86_64-pc-windows-gnu-sl
-ln -s cryptocorrosion/utils-simd/ppv-lite86 ../vendor/ppv-lite86-sl
-ln -s cloudabi/rust ../vendor/cloudabi-sl
+#define cargo_registry $(pwd)/cbindgen/vendor
 
-# Add `.cargo-checksum.json` for each dependency
-find -L ../vendor -mindepth 2 -maxdepth 2 -type f -name Cargo.toml \
-  -exec sh -c 'echo "{\"files\":{ },\"package\":\"\"}" > "$(dirname $0)/.cargo-checksum.json"' '{}' \;
+#ls -lR $(pwd)
 
-# Remove dependency checksums
-sed -i 's/checksum = "[^"]*"/checksum = ""/' Cargo.lock
+#ln -s $(pwd)/cbindgen/vendor ../vendor
+ln -s $(pwd)/cbindgen/vendor vendor
 
 %build
 # When cross-compiling under SB2 rust needs to know what arch to emit
@@ -81,6 +64,7 @@ export SB2_RUST_USE_REAL_FN=Yes
 
 export RUSTFLAGS="%{rustflags}"
 export CARGO_HOME=`pwd`/cargo-home/
+#export CARGO_FEATURE_VENDORED=1
 
 # Forcing cargo builds to use a single core in order to make it build more
 # reliably. Let's revisit when we upgrade rust. JB#53588
