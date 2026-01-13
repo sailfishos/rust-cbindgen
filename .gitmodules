@@ -130,6 +130,9 @@
 [submodule "vendor/rustix"]
 	path = vendor/rustix
 	url = https://github.com/bytecodealliance/rustix
+[submodule "vendor/diff.rs"]
+	path = vendor/diff.rs
+	url = https://github.com/utkarshkukreti/diff.rs
 [submodule "vendor/dashmap"]
 	path = vendor/dashmap
 	url = https://github.com/xacrimon/dashmap
