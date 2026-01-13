@@ -124,3 +124,6 @@
 [submodule "vendor/yansi"]
 	path = vendor/yansi
 	url = https://github.com/SergioBenitez/yansi
+[submodule "vendor/winnow"]
+	path = vendor/winnow
+	url = https://github.com/winnow-rs/winnow
