@@ -118,6 +118,9 @@
 [submodule "vendor/wasi"]
 	path = vendor/wasi
 	url = https://github.com/sailfishos-mirror/rust-wasi.git
+[submodule "pretty-assertions"]
+	path = vendor/rust-pretty-assertions
+	url = https://github.com/rust-pretty-assertions/rust-pretty-assertions
 [submodule "vendor/unicode-ident"]
 	path = vendor/unicode-ident
 	url = https://github.com/dtolnay/unicode-ident
