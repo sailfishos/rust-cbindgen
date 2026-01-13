@@ -121,6 +121,9 @@
 [submodule "vendor/unicode-ident"]
 	path = vendor/unicode-ident
 	url = https://github.com/dtolnay/unicode-ident
+[submodule "vendor/rustix"]
+	path = vendor/rustix
+	url = https://github.com/bytecodealliance/rustix
 [submodule "vendor/yansi"]
 	path = vendor/yansi
 	url = https://github.com/SergioBenitez/yansi

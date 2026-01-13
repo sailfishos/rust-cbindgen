@@ -1,0 +1,28 @@
+diff --git a/vendor/rustix/Cargo.toml b/vendor/rustix/Cargo.toml
+index ab413e71..7d2a2353 100644
+--- a/vendor/rustix/Cargo.toml
++++ b/vendor/rustix/Cargo.toml
+@@ -55,23 +55,6 @@ libc = { version = "0.2.153", default-features = false }
+ [target.'cfg(all(any(target_os = "android", target_os = "linux"), any(rustix_use_libc, miri, not(all(target_os = "linux", target_endian = "little", any(target_arch = "arm", all(target_arch = "aarch64", target_pointer_width = "64"), target_arch = "riscv64", all(rustix_use_experimental_asm, target_arch = "powerpc64"), all(rustix_use_experimental_asm, target_arch = "mips"), all(rustix_use_experimental_asm, target_arch = "mips32r6"), all(rustix_use_experimental_asm, target_arch = "mips64"), all(rustix_use_experimental_asm, target_arch = "mips64r6"), target_arch = "x86", all(target_arch = "x86_64", target_pointer_width = "64")))))))'.dependencies]
+ linux-raw-sys = { version = "0.4.12", default-features = false, features = ["general", "ioctl", "no_std"] }
+ 
+-# For the libc backend on Windows, use the Winsock API in windows-sys.
+-[target.'cfg(windows)'.dependencies.windows-sys]
+-version = "0.52.0"
+-features = [
+-    "Win32_Foundation",
+-    "Win32_Networking_WinSock",
+-    "Win32_NetworkManagement_IpHelper",
+-    "Win32_System_Threading"
+-]
+-
+-# For the libc backend on Windows, also use the errno crate, which has Windows
+-# support.
+-[target.'cfg(windows)'.dependencies.libc_errno]
+-version = "0.3.8"
+-package = "errno"
+-default-features = false
+-
+ [dev-dependencies]
+ tempfile = "3.5.0"
+ libc = "0.2.153"
