@@ -46,8 +46,6 @@ ln -s rand/rand_hc ../vendor/rand_hc-sl
 ln -s parking_lot/lock_api ../vendor/lock_api-sl
 ln -s parking_lot/core ../vendor/parking_lot_core-sl
 ln -s hermit/hermit-abi ../vendor/hermit-abi-sl
-ln -s winapi/i686 ../vendor/winapi-i686-pc-windows-gnu-sl
-ln -s winapi/x86_64 ../vendor/winapi-x86_64-pc-windows-gnu-sl
 ln -s cryptocorrosion/utils-simd/ppv-lite86 ../vendor/ppv-lite86-sl
 ln -s cloudabi/rust ../vendor/cloudabi-sl
 
