@@ -1,0 +1,11 @@
+diff --git a/vendor/crossbeam/crossbeam-utils/Cargo.toml b/vendor/crossbeam/crossbeam-utils/Cargo.toml
+index f9b334c..661204e 100644
+--- a/vendor/crossbeam/crossbeam-utils/Cargo.toml
++++ b/vendor/crossbeam/crossbeam-utils/Cargo.toml
+@@ -40,6 +40,3 @@ loom = { version = "0.7.1", optional = true }
+ 
+ [dev-dependencies]
+ fastrand = "2"
+-
+-[lints]
+-workspace = true

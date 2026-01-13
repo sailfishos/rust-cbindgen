@@ -148,6 +148,9 @@
 [submodule "vendor/winnow"]
 	path = vendor/winnow
 	url = https://github.com/winnow-rs/winnow
+[submodule "vendor/crossbeam"]
+	path = vendor/crossbeam
+	url = https://github.com/crossbeam-rs/crossbeam
 [submodule "vendor/vte"]
 	path = vendor/vte
 	url = https://github.com/alacritty/vte
