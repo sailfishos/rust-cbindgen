@@ -1,0 +1,16 @@
+diff --git a/vendor/serde/serde_derive/Cargo.toml b/vendor/serde/serde_derive/Cargo.toml
+index ab66b05b..dd3cddcc 100644
+--- a/vendor/serde/serde_derive/Cargo.toml
++++ b/vendor/serde/serde_derive/Cargo.toml
+@@ -22,6 +22,11 @@ deserialize_in_place = []
+ name = "serde_derive"
+ proc-macro = true
+ 
++[workspace.dependencies]
++proc-macro2 = { version = "1.0.74", default-features = false }
++quote = { version = "1.0.35", default-features = false }
++syn = { version = "2.0.46", default-features = false }
++
+ [dependencies]
+ proc-macro2 = { workspace = true, features = ["proc-macro"] }
+ quote = { workspace = true, features = ["proc-macro"] }
