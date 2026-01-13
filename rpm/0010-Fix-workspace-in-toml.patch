@@ -1,0 +1,132 @@
+diff --git a/vendor/toml/crates/serde_spanned/Cargo.toml b/vendor/toml/crates/serde_spanned/Cargo.toml
+index e2c86261..c10ba23a 100644
+--- a/vendor/toml/crates/serde_spanned/Cargo.toml
++++ b/vendor/toml/crates/serde_spanned/Cargo.toml
+@@ -1,3 +1,21 @@
++[workspace.package]
++homepage = "https://github.com/toml-rs/toml"
++repository = "https://github.com/toml-rs/toml"
++license = "MIT OR Apache-2.0"
++edition = "2021"
++rust-version = "1.65"  # MSRV
++include = [
++  "build.rs",
++  "src/**/*",
++  "Cargo.toml",
++  "Cargo.lock",
++  "LICENSE*",
++  "README.md",
++  "benches/**/*",
++  "examples/**/*",
++  "tests/**/*"
++]
++
+ [package]
+ name = "serde_spanned"
+ version = "0.6.7"
+@@ -32,6 +50,3 @@ serde = "1"
+ serde_derive = "1"
+ serde-untagged = "0.1"
+ toml = { path = "../toml" }
+-
+-[lints]
+-workspace = true
+diff --git a/crates/toml/Cargo.toml b/crates/toml/Cargo.toml
+index 6b7d5aef..3dfcb5d8 100644
+--- a/vendor/toml/crates/toml/Cargo.toml
++++ b/vendor/toml/crates/toml/Cargo.toml
+@@ -1,3 +1,21 @@
++[workspace.package]
++homepage = "https://github.com/toml-rs/toml"
++repository = "https://github.com/toml-rs/toml"
++license = "MIT OR Apache-2.0"
++edition = "2021"
++rust-version = "1.65"  # MSRV
++include = [
++  "build.rs",
++  "src/**/*",
++  "Cargo.toml",
++  "Cargo.lock",
++  "LICENSE*",
++  "README.md",
++  "benches/**/*",
++  "examples/**/*",
++  "tests/**/*"
++]
++
+ [package]
+ name = "toml"
+ version = "0.8.19"
+@@ -72,6 +90,3 @@ required-features = ["parse", "display"]
+ [[example]]
+ name = "toml2json"
+ required-features = ["parse", "display"]
+-
+-[lints]
+-workspace = true
+diff --git a/crates/toml_datetime/Cargo.toml b/crates/toml_datetime/Cargo.toml
+index a677d6cb..9fe22bfe 100644
+--- a/vendor/toml/crates/toml_datetime/Cargo.toml
++++ b/vendor/toml/crates/toml_datetime/Cargo.toml
+@@ -1,3 +1,21 @@
++[workspace.package]
++homepage = "https://github.com/toml-rs/toml"
++repository = "https://github.com/toml-rs/toml"
++license = "MIT OR Apache-2.0"
++edition = "2021"
++rust-version = "1.65"  # MSRV
++include = [
++  "build.rs",
++  "src/**/*",
++  "Cargo.toml",
++  "Cargo.lock",
++  "LICENSE*",
++  "README.md",
++  "benches/**/*",
++  "examples/**/*",
++  "tests/**/*"
++]
++
+ [package]
+ name = "toml_datetime"
+ version = "0.6.8"
+@@ -27,6 +45,3 @@ pre-release-replacements = [
+ 
+ [dependencies]
+ serde = { version = "1.0.145", optional = true }
+-
+-[lints]
+-workspace = true
+diff --git a/crates/toml_edit/Cargo.toml b/crates/toml_edit/Cargo.toml
+index cd46f28a..11c68e10 100644
+--- a/vendor/toml/crates/toml_edit/Cargo.toml
++++ b/vendor/toml/crates/toml_edit/Cargo.toml
+@@ -1,3 +1,21 @@
++[workspace.package]
++homepage = "https://github.com/toml-rs/toml"
++repository = "https://github.com/toml-rs/toml"
++license = "MIT OR Apache-2.0"
++edition = "2021"
++rust-version = "1.65"  # MSRV
++include = [
++  "build.rs",
++  "src/**/*",
++  "Cargo.toml",
++  "Cargo.lock",
++  "LICENSE*",
++  "README.md",
++  "benches/**/*",
++  "examples/**/*",
++  "tests/**/*"
++]
++
+ [package]
+ name = "toml_edit"
+ version = "0.22.20"
+@@ -78,6 +96,3 @@ harness = false
+ name = "visit"
+ required-features = ["parse", "display"]
+ test = true
+-
+-[lints]
+-workspace = true
