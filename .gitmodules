@@ -121,6 +121,9 @@
 [submodule "pretty-assertions"]
 	path = vendor/rust-pretty-assertions
 	url = https://github.com/rust-pretty-assertions/rust-pretty-assertions
+[submodule "vendor/equivalent"]
+	path = vendor/equivalent
+	url = https://github.com/indexmap-rs/equivalent
 [submodule "vendor/unicode-ident"]
 	path = vendor/unicode-ident
 	url = https://github.com/dtolnay/unicode-ident
