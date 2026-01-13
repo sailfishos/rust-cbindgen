@@ -121,3 +121,6 @@
 [submodule "vendor/winapi"]
 	path = vendor/winapi
 	url = https://github.com/sailfishos-mirror/rust-winapi-rs.git
+[submodule "vendor/yansi"]
+	path = vendor/yansi
+	url = https://github.com/SergioBenitez/yansi
