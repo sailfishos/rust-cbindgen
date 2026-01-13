@@ -118,6 +118,9 @@
 [submodule "vendor/wasi"]
 	path = vendor/wasi
 	url = https://github.com/sailfishos-mirror/rust-wasi.git
+[submodule "vendor/unicode-ident"]
+	path = vendor/unicode-ident
+	url = https://github.com/dtolnay/unicode-ident
 [submodule "vendor/yansi"]
 	path = vendor/yansi
 	url = https://github.com/SergioBenitez/yansi
