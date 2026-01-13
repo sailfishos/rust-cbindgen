@@ -124,6 +124,9 @@
 [submodule "vendor/unicode-ident"]
 	path = vendor/unicode-ident
 	url = https://github.com/dtolnay/unicode-ident
+[submodule "vendor/memchr"]
+	path = vendor/memchr
+	url = https://github.com/BurntSushi/memchr
 [submodule "vendor/rustix"]
 	path = vendor/rustix
 	url = https://github.com/bytecodealliance/rustix
