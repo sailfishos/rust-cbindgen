@@ -1,0 +1,60 @@
+diff --git a/vendor/clap/clap_builder/Cargo.toml b/vendor/clap/clap_builder/Cargo.toml
+index 553bb746..978c59cf 100644
+--- a/vendor/clap/clap_builder/Cargo.toml
++++ b/vendor/clap/clap_builder/Cargo.toml
+@@ -1,3 +1,18 @@
++[workspace.package]
++repository = "https://github.com/clap-rs/clap"
++license = "MIT OR Apache-2.0"
++edition = "2021"
++rust-version = "1.74"  # MSRV
++include = [
++  "build.rs",
++  "src/**/*",
++  "Cargo.toml",
++  "LICENSE*",
++  "README.md",
++  "benches/**/*",
++  "examples/**/*"
++]
++
+ [package]
+ name = "clap_builder"
+ version = "4.5.15"
+@@ -72,6 +87,3 @@ unicode-width = { version = "0.1.9", optional = true }
+ static_assertions = "1.1.0"
+ unic-emoji-char = "0.9.0"
+ color-print = "0.3.6"
+-
+-[lints]
+-workspace = true
+diff --git a/vendor/clap/clap_lex/Cargo.toml b/vendor/clap/clap_lex/Cargo.toml
+index d9d4d2da..46e194b1 100644
+--- a/vendor/clap/clap_lex/Cargo.toml
++++ b/vendor/clap/clap_lex/Cargo.toml
+@@ -1,3 +1,18 @@
++[workspace.package]
++repository = "https://github.com/clap-rs/clap"
++license = "MIT OR Apache-2.0"
++edition = "2021"
++rust-version = "1.74"  # MSRV
++include = [
++  "build.rs",
++  "src/**/*",
++  "Cargo.toml",
++  "LICENSE*",
++  "README.md",
++  "benches/**/*",
++  "examples/**/*"
++]
++
+ [package]
+ name = "clap_lex"
+ version = "0.7.2"
+@@ -31,6 +46,3 @@ automod = "1.0.14"
+ 
+ [lib]
+ bench = false
+-
+-[lints]
+-workspace = true
