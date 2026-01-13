@@ -130,6 +130,9 @@
 [submodule "vendor/rustix"]
 	path = vendor/rustix
 	url = https://github.com/bytecodealliance/rustix
+[submodule "vendor/anstyle"]
+	path = vendor/anstyle
+	url = https://github.com/rust-cli/anstyle.git
 [submodule "vendor/linux-raw-sys"]
 	path = vendor/linux-raw-sys
 	url = https://github.com/sunfishcode/linux-raw-sys

@@ -1,0 +1,186 @@
+diff --git a/vendor/anstyle/crates/anstream/Cargo.toml b/vendor/anstyle/crates/anstream/Cargo.toml
+index 381f499..2138c2e 100644
+--- a/vendor/anstyle/crates/anstream/Cargo.toml
++++ b/vendor/anstyle/crates/anstream/Cargo.toml
+@@ -1,3 +1,18 @@
++[workspace.package]
++license = "MIT OR Apache-2.0"
++edition = "2021"
++rust-version = "1.65.0"  # MSRV
++include = [
++  "build.rs",
++  "src/**/*",
++  "Cargo.toml",
++  "Cargo.lock",
++  "LICENSE*",
++  "README.md",
++  "benches/**/*",
++  "examples/**/*"
++]
++
+ [package]
+ name = "anstream"
+ version = "0.6.15"
+@@ -68,6 +83,3 @@ harness = false
+ [[bench]]
+ name = "stream"
+ harness = false
+-
+-[lints]
+-workspace = true
+diff --git a/vendor/anstyle/crates/anstyle-parse/Cargo.toml b/vendor/anstyle/crates/anstyle-parse/Cargo.toml
+index 459dac4..4d6dc33 100644
+--- a/vendor/anstyle/crates/anstyle-parse/Cargo.toml
++++ b/vendor/anstyle/crates/anstyle-parse/Cargo.toml
+@@ -1,3 +1,18 @@
++[workspace.package]
++license = "MIT OR Apache-2.0"
++edition = "2021"
++rust-version = "1.65.0"  # MSRV
++include = [
++  "build.rs",
++  "src/**/*",
++  "Cargo.toml",
++  "Cargo.lock",
++  "LICENSE*",
++  "README.md",
++  "benches/**/*",
++  "examples/**/*"
++]
++
+ [package]
+ name = "anstyle-parse"
+ version = "0.2.5"
+@@ -44,6 +59,3 @@ vte_generate_state_changes = { version = "0.1.1" }
+ name = "parse"
+ harness = false
+ required-features = ["utf8"]
+-
+-[lints]
+-workspace = true
+diff --git a/vendor/anstyle/crates/anstyle-query/Cargo.toml b/vendor/anstyle/crates/anstyle-query/Cargo.toml
+index 8e3b22d..fea0f16 100644
+--- a/vendor/anstyle/crates/anstyle-query/Cargo.toml
++++ b/vendor/anstyle/crates/anstyle-query/Cargo.toml
+@@ -1,3 +1,18 @@
++[workspace.package]
++license = "MIT OR Apache-2.0"
++edition = "2021"
++rust-version = "1.65.0"  # MSRV
++include = [
++  "build.rs",
++  "src/**/*",
++  "Cargo.toml",
++  "Cargo.lock",
++  "LICENSE*",
++  "README.md",
++  "benches/**/*",
++  "examples/**/*"
++]
++
+ [package]
+ name = "anstyle-query"
+ version = "1.1.1"
+@@ -22,9 +37,3 @@ pre-release-replacements = [
+   {file="CHANGELOG.md", search="<!-- next-header -->", replace="<!-- next-header -->\n## [Unreleased] - ReleaseDate\n", exactly=1},
+   {file="CHANGELOG.md", search="<!-- next-url -->", replace="<!-- next-url -->\n[Unreleased]: https://github.com/rust-cli/anstyle/compare/{{tag_name}}...HEAD", exactly=1},
+ ]
+-
+-[target.'cfg(windows)'.dependencies]
+-windows-sys = { version = "0.52.0", features = ["Win32_System_Console", "Win32_Foundation"] }
+-
+-[lints]
+-workspace = true
+diff --git a/vendor/anstyle/crates/anstyle-wincon/Cargo.toml b/vendor/anstyle/crates/anstyle-wincon/Cargo.toml
+index deb77c8..975f73f 100644
+--- a/vendor/anstyle/crates/anstyle-wincon/Cargo.toml
++++ b/vendor/anstyle/crates/anstyle-wincon/Cargo.toml
+@@ -1,3 +1,18 @@
++[workspace.package]
++license = "MIT OR Apache-2.0"
++edition = "2021"
++rust-version = "1.65.0"  # MSRV
++include = [
++  "build.rs",
++  "src/**/*",
++  "Cargo.toml",
++  "Cargo.lock",
++  "LICENSE*",
++  "README.md",
++  "benches/**/*",
++  "examples/**/*"
++]
++
+ [package]
+ name = "anstyle-wincon"
+ version = "3.0.4"
+@@ -30,9 +45,3 @@ anstyle = { version = "1.0.0", path = "../anstyle" }
+ 
+ [dev-dependencies]
+ lexopt = "0.3.0"
+-
+-[target.'cfg(windows)'.dependencies]
+-windows-sys = { version = "0.52.0", features = ["Win32_System_Console", "Win32_Foundation"] }
+-
+-[lints]
+-workspace = true
+diff --git a/vendor/anstyle/crates/anstyle/Cargo.toml b/vendor/anstyle/crates/anstyle/Cargo.toml
+index 3e7dac3..45bd022 100644
+--- a/vendor/anstyle/crates/anstyle/Cargo.toml
++++ b/vendor/anstyle/crates/anstyle/Cargo.toml
+@@ -1,3 +1,18 @@
++[workspace.package]
++license = "MIT OR Apache-2.0"
++edition = "2021"
++rust-version = "1.65.0"  # MSRV
++include = [
++  "build.rs",
++  "src/**/*",
++  "Cargo.toml",
++  "Cargo.lock",
++  "LICENSE*",
++  "README.md",
++  "benches/**/*",
++  "examples/**/*"
++]
++
+ [package]
+ name = "anstyle"
+ version = "1.0.8"
+@@ -33,6 +48,3 @@ std = []
+ 
+ [dev-dependencies]
+ lexopt = "0.3.0"
+-
+-[lints]
+-workspace = true
+diff --git a/vendor/anstyle/crates/colorchoice/Cargo.toml b/vendor/anstyle/crates/colorchoice/Cargo.toml
+index c0459b7..90c6299 100644
+--- a/vendor/anstyle/crates/colorchoice/Cargo.toml
++++ b/vendor/anstyle/crates/colorchoice/Cargo.toml
+@@ -1,3 +1,18 @@
++[workspace.package]
++license = "MIT OR Apache-2.0"
++edition = "2021"
++rust-version = "1.65.0"  # MSRV
++include = [
++  "build.rs",
++  "src/**/*",
++  "Cargo.toml",
++  "Cargo.lock",
++  "LICENSE*",
++  "README.md",
++  "benches/**/*",
++  "examples/**/*"
++]
++
+ [package]
+ name = "colorchoice"
+ version = "1.0.2"
+@@ -22,6 +37,3 @@ pre-release-replacements = [
+   {file="CHANGELOG.md", search="<!-- next-header -->", replace="<!-- next-header -->\n## [Unreleased] - ReleaseDate\n", exactly=1},
+   {file="CHANGELOG.md", search="<!-- next-url -->", replace="<!-- next-url -->\n[Unreleased]: https://github.com/rust-cli/anstyle/compare/{{tag_name}}...HEAD", exactly=1},
+ ]
+-
+-[lints]
+-workspace = true
