@@ -163,6 +163,9 @@
 [submodule "vendor/crossbeam"]
 	path = vendor/crossbeam
 	url = https://github.com/crossbeam-rs/crossbeam
+[submodule "vendor/is_terminal_polyfill"]
+	path = vendor/is_terminal_polyfill
+	url = https://github.com/polyfill-rs/is_terminal_polyfill
 [submodule "vendor/vte"]
 	path = vendor/vte
 	url = https://github.com/alacritty/vte
