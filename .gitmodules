@@ -130,6 +130,9 @@
 [submodule "vendor/rustix"]
 	path = vendor/rustix
 	url = https://github.com/bytecodealliance/rustix
+[submodule "vendor/dashmap"]
+	path = vendor/dashmap
+	url = https://github.com/xacrimon/dashmap
 [submodule "vendor/anstyle"]
 	path = vendor/anstyle
 	url = https://github.com/rust-cli/anstyle.git
