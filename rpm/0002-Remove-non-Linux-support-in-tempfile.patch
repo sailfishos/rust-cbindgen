@@ -1,0 +1,18 @@
+diff --git a/vendor/tempfile/Cargo.toml b/vendor/tempfile/Cargo.toml
+index 1dee2d9..9be94e3 100644
+--- a/vendor/tempfile/Cargo.toml
++++ b/vendor/tempfile/Cargo.toml
+@@ -25,13 +25,6 @@ once_cell = { version = "1.19.0", default-features = false, features = ["std"] }
+ [target.'cfg(any(unix, target_os = "wasi"))'.dependencies]
+ rustix = { version = "0.38.31", features = ["fs"] }
+ 
+-[target.'cfg(windows)'.dependencies.windows-sys]
+-version = "0.59"
+-features = [
+-    "Win32_Storage_FileSystem",
+-    "Win32_Foundation",
+-]
+-
+ [dev-dependencies]
+ doc-comment = "0.3"
+ 
