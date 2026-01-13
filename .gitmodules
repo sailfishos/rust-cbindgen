@@ -127,6 +127,9 @@
 [submodule "vendor/rustix"]
 	path = vendor/rustix
 	url = https://github.com/bytecodealliance/rustix
+[submodule "vendor/once_cell"]
+	path = vendor/once_cell
+	url = https://github.com/matklad/once_cell
 [submodule "vendor/yansi"]
 	path = vendor/yansi
 	url = https://github.com/SergioBenitez/yansi
