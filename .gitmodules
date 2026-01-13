@@ -130,6 +130,9 @@
 [submodule "vendor/memchr"]
 	path = vendor/memchr
 	url = https://github.com/BurntSushi/memchr
+[submodule "vendor/fastrand"]
+	path = vendor/fastrand
+	url = https://github.com/smol-rs/fastrand
 [submodule "vendor/rustix"]
 	path = vendor/rustix
 	url = https://github.com/bytecodealliance/rustix
