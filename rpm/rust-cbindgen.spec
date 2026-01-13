@@ -1,15 +1,25 @@
 %global rustflags -Clink-arg=-Wl,-z,relro,-z,now
 
 Name:           rust-cbindgen
-Version:        0.19.0
+Version:        0.27.0
 Release:        0
 Summary:        A tool for generating C bindings from Rust code
 License:        MPLv2.0
 URL:            https://crates.io/crates/cbindgen
 Source:         %{name}-%{version}.tar.bz2
-BuildRequires:  cargo >= 1.30.0
-BuildRequires:  rust >= 1.30.0
-BuildRequires:  rust-std-static >= 1.30.0
+BuildRequires:  cargo >= 1.74.0
+BuildRequires:  rust >= 1.74.0
+BuildRequires:  rust-std-static >= 1.74.0
+Patch1:         0001-Drop-non-Linux-from-cbindgen.patch
+Patch2:         0002-Remove-non-Linux-support-in-tempfile.patch
+Patch3:         0003-Hardcode-versions-from-workspace.patch
+Patch4:         0004-Drop-non-Linux-support-in-rustix.patch
+Patch5:         0005-Drop-non-Linux-support-in-errno.patch
+Patch6:         0006-Drop-non-Linux-support-in-parking-lot.patch
+Patch7:         0007-Drop-non-Linux-support-in-anstyle.patch
+Patch8:         0008-Fix-workspace-in-clap.patch
+Patch9:         0009-Fix-workspace-in-crossbeam.patch
+Patch10:        0010-Fix-workspace-in-toml.patch
 
 %description
 A tool for generating C/C++ bindings from Rust code.
@@ -30,10 +40,13 @@ A tool for generating C/C++ bindings from Rust code.
 %autosetup -p1 -n %{name}-%{version}/cbindgen
 
 # To prevent error `found a virtual manifest instead of a package manifest`
-rm ../vendor/cryptocorrosion/Cargo.toml
-rm ../vendor/hermit/Cargo.toml
-rm ../vendor/serde/Cargo.toml
-rm ../vendor/serial_test/Cargo.toml
+rm ../vendor/cryptocorrosion/Cargo.toml || :
+rm ../vendor/hermit/Cargo.toml || :
+rm ../vendor/serde/Cargo.toml || :
+rm ../vendor/serial_test/Cargo.toml || :
+rm ../vendor/anstyle/Cargo.toml || :
+rm ../vendor/toml/Cargo.toml || :
+rm ../vendor/rust-pretty-assertions/Cargo.toml || :
 
 # Make nested subprojects visible for cargo
 ln -s serde/serde ../vendor/serde-sl
@@ -48,6 +61,21 @@ ln -s parking_lot/core ../vendor/parking_lot_core-sl
 ln -s hermit/hermit-abi ../vendor/hermit-abi-sl
 ln -s cryptocorrosion/utils-simd/ppv-lite86 ../vendor/ppv-lite86-sl
 ln -s cloudabi/rust ../vendor/cloudabi-sl
+ln -s toml/crates/toml ../vendor/toml-sl
+ln -s toml/crates/serde_spanned ../vendor/serde_spanned-sl
+ln -s toml/crates/toml_datetime ../vendor/toml_datetime-sl
+ln -s toml/crates/toml_edit ../vendor/toml_edit-sl
+ln -s rust-pretty-assertions/pretty_assertions ../vendor/pretty_assertions-sl
+ln -s clap/clap_builder ../vendor/clap_builder-sl
+ln -s clap/clap_lex ../vendor/clap_lex-sl
+ln -s anstyle/crates/anstream ../vendor/anstream-sl
+ln -s anstyle/crates/anstyle ../vendor/anstyle-sl
+ln -s anstyle/crates/anstyle-parse ../vendor/anstyle-parse-sl
+ln -s anstyle/crates/anstyle-query ../vendor/anstyle-query-sl
+ln -s anstyle/crates/anstyle-wincon ../vendor/anstyle-wincon-sl
+ln -s anstyle/crates/colorchoice ../vendor/colorchoice-sl
+ln -s crossbeam/crossbeam-utils ../vendor/crossbeam-utils-sl
+ln -s vte/utf8parse ../vendor/utf8parse-sl
 
 # Add `.cargo-checksum.json` for each dependency
 find -L ../vendor -mindepth 2 -maxdepth 2 -type f -name Cargo.toml \
