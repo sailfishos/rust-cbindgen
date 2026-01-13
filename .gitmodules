@@ -130,6 +130,9 @@
 [submodule "vendor/rustix"]
 	path = vendor/rustix
 	url = https://github.com/bytecodealliance/rustix
+[submodule "vendor/linux-raw-sys"]
+	path = vendor/linux-raw-sys
+	url = https://github.com/sunfishcode/linux-raw-sys
 [submodule "vendor/once_cell"]
 	path = vendor/once_cell
 	url = https://github.com/matklad/once_cell
