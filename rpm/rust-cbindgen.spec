@@ -12,7 +12,6 @@ License:        MPLv2.0
 URL:            https://github.com/sailfishos/rust-cbindgen
 Source0:        %{name}-%{version}.tar.bz2
 Source1:        vendor.tar.zst
-Source2:        cargo_config
 BuildRequires:  cargo >= 1.30.0
 BuildRequires:  rust >= 1.30.0
 BuildRequires:  rust-std-static >= 1.30.0
@@ -29,10 +28,6 @@ A tool for generating C/C++ bindings from Rust code.
 
 %prep
 %autosetup -a1 -n %{name}-%{version}/cbindgen
-
-%if 0%{?_obs_build_project:1}
-install -D -m 644 %{SOURCE2} .cargo/config
-%endif
 
 %build
 # When cross-compiling under SB2 rust needs to know what arch to emit
