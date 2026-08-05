@@ -5,7 +5,7 @@
 %endif
 
 Name:           rust-cbindgen
-Version:        0.26.0
+Version:        0.27.0
 Release:        0
 Summary:        A tool for generating C bindings from Rust code
 License:        MPLv2.0
@@ -13,9 +13,9 @@ URL:            https://github.com/sailfishos/rust-cbindgen
 Source0:        %{name}-%{version}.tar.bz2
 Source1:        vendor.tar.zst
 Source2:        cargo_config
-BuildRequires:  cargo >= 1.64.0
-BuildRequires:  rust >= 1.64.0
-BuildRequires:  rust-std-static >= 1.64.0
+BuildRequires:  cargo >= 1.74.0
+BuildRequires:  rust >= 1.74.0
+BuildRequires:  rust-std-static >= 1.74.0
 
 %description
 A tool for generating C/C++ bindings from Rust code.
@@ -97,9 +97,9 @@ export RUSTFLAGS="%{rustflags}"
 export CARGO_HOME=`pwd`/cargo-home/
 # cargo install appends /bin to the path
 %ifarch %arm aarch64
-cargo install --root=%{buildroot}%{_prefix} --path . --target $SB2_RUST_TARGET_TRIPLE
+cargo install --locked --root=%{buildroot}%{_prefix} --path . --target $SB2_RUST_TARGET_TRIPLE
 %else
-cargo install --root=%{buildroot}%{_prefix} --path .
+cargo install --locked --root=%{buildroot}%{_prefix} --path .
 %endif
 
 # remove spurious files
