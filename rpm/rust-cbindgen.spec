@@ -5,7 +5,7 @@
 %endif
 
 Name:           rust-cbindgen
-Version:        0.27.0
+Version:        0.29.4
 Release:        0
 Summary:        A tool for generating C bindings from Rust code
 License:        MPLv2.0
